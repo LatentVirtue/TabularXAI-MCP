@@ -1,0 +1,29 @@
+{
+  "data_path": "C:\\Users\\Alex\\Documents\\HermesWorkDir\\TabularXAI-MCP\\examples\\demo_run\\synthetic_dataset.csv",
+  "target_column": "target",
+  "task_type": "binary_classification",
+  "n_splits": 5,
+  "seed": 7,
+  "drop_columns": [],
+  "auto_drop_id_columns": true,
+  "auto_drop_leakage": true,
+  "output_dir": "C:\\Users\\Alex\\Documents\\HermesWorkDir\\TabularXAI-MCP\\examples",
+  "run_id": "demo_run",
+  "gbdt": {
+    "n_estimators": 400,
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_child_samples": 10
+  },
+  "nn": {
+    "epochs": 25,
+    "hidden_dim": 128,
+    "n_blocks": 2,
+    "dropout": 0.1,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "patience": 10
+  },
+  "max_shap_rows": 2000
+}

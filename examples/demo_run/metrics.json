@@ -1,0 +1,463 @@
+{
+  "run_id": "demo_run",
+  "created_at": "2026-11-20T21:05:00+00:00",
+  "task_type": "binary_classification",
+  "classes": [
+    "0",
+    "1"
+  ],
+  "n_splits": 5,
+  "fold_sizes": [
+    [
+      1600,
+      400
+    ],
+    [
+      1600,
+      400
+    ],
+    [
+      1600,
+      400
+    ],
+    [
+      1600,
+      400
+    ],
+    [
+      1600,
+      400
+    ]
+  ],
+  "primary_metric": "roc_auc",
+  "winner": "pytorch_mlp",
+  "per_model": {
+    "lightgbm": {
+      "per_fold": {
+        "roc_auc": [
+          0.774198,
+          0.774249,
+          0.804008,
+          0.821768,
+          0.796534
+        ],
+        "pr_auc": [
+          0.718995,
+          0.747928,
+          0.762422,
+          0.805529,
+          0.757362
+        ],
+        "f1": [
+          0.664706,
+          0.660661,
+          0.676218,
+          0.703704,
+          0.689655
+        ],
+        "brier": [
+          0.219911,
+          0.219153,
+          0.202669,
+          0.176549,
+          0.209706
+        ],
+        "accuracy": [
+          0.715,
+          0.7175,
+          0.7175,
+          0.76,
+          0.73
+        ]
+      },
+      "mean": {
+        "roc_auc": 0.794152,
+        "pr_auc": 0.758447,
+        "f1": 0.678989,
+        "brier": 0.205598,
+        "accuracy": 0.728
+      },
+      "std": {
+        "roc_auc": 0.018219,
+        "pr_auc": 0.027932,
+        "f1": 0.015951,
+        "brier": 0.015861,
+        "accuracy": 0.016837
+      },
+      "oof": {
+        "roc_auc": 0.793229,
+        "pr_auc": 0.75558,
+        "f1": 0.678867,
+        "brier": 0.205598,
+        "accuracy": 0.728
+      },
+      "calibration": {
+        "ece": 0.13383,
+        "ece_n_bins": 10,
+        "brier": 0.205597525807261,
+        "reliability_curve": [
+          {
+            "bin_center": 0.05,
+            "mean_predicted": 0.03,
+            "observed_rate": 0.1782,
+            "count": 679
+          },
+          {
+            "bin_center": 0.15,
+            "mean_predicted": 0.1442,
+            "observed_rate": 0.3173,
+            "count": 208
+          },
+          {
+            "bin_center": 0.25,
+            "mean_predicted": 0.2494,
+            "observed_rate": 0.3962,
+            "count": 106
+          },
+          {
+            "bin_center": 0.35,
+            "mean_predicted": 0.3525,
+            "observed_rate": 0.3673,
+            "count": 98
+          },
+          {
+            "bin_center": 0.45,
+            "mean_predicted": 0.4477,
+            "observed_rate": 0.4388,
+            "count": 98
+          },
+          {
+            "bin_center": 0.55,
+            "mean_predicted": 0.5548,
+            "observed_rate": 0.5102,
+            "count": 98
+          },
+          {
+            "bin_center": 0.65,
+            "mean_predicted": 0.6477,
+            "observed_rate": 0.6389,
+            "count": 72
+          },
+          {
+            "bin_center": 0.75,
+            "mean_predicted": 0.7514,
+            "observed_rate": 0.55,
+            "count": 80
+          },
+          {
+            "bin_center": 0.85,
+            "mean_predicted": 0.8535,
+            "observed_rate": 0.6713,
+            "count": 143
+          },
+          {
+            "bin_center": 0.95,
+            "mean_predicted": 0.9687,
+            "observed_rate": 0.811,
+            "count": 418
+          }
+        ]
+      },
+      "fit_seconds": 3.408,
+      "n_parameters": null
+    },
+    "pytorch_mlp": {
+      "per_fold": {
+        "roc_auc": [
+          0.814352,
+          0.820566,
+          0.819209,
+          0.862659,
+          0.825441
+        ],
+        "pr_auc": [
+          0.789859,
+          0.780693,
+          0.783069,
+          0.837428,
+          0.809363
+        ],
+        "f1": [
+          0.664577,
+          0.699422,
+          0.731302,
+          0.733728,
+          0.711656
+        ],
+        "brier": [
+          0.175623,
+          0.170896,
+          0.17199,
+          0.150546,
+          0.167112
+        ],
+        "accuracy": [
+          0.7325,
+          0.74,
+          0.7575,
+          0.775,
+          0.765
+        ]
+      },
+      "mean": {
+        "roc_auc": 0.828445,
+        "pr_auc": 0.800083,
+        "f1": 0.708137,
+        "brier": 0.167233,
+        "accuracy": 0.754
+      },
+      "std": {
+        "roc_auc": 0.017468,
+        "pr_auc": 0.021217,
+        "f1": 0.025208,
+        "brier": 0.008774,
+        "accuracy": 0.0157
+      },
+      "oof": {
+        "roc_auc": 0.82755,
+        "pr_auc": 0.797038,
+        "f1": 0.708876,
+        "brier": 0.167233,
+        "accuracy": 0.754
+      },
+      "calibration": {
+        "ece": 0.02243,
+        "ece_n_bins": 10,
+        "brier": 0.16723333358323977,
+        "reliability_curve": [
+          {
+            "bin_center": 0.05,
+            "mean_predicted": 0.0591,
+            "observed_rate": 0.0836,
+            "count": 287
+          },
+          {
+            "bin_center": 0.15,
+            "mean_predicted": 0.1443,
+            "observed_rate": 0.1463,
+            "count": 294
+          },
+          {
+            "bin_center": 0.25,
+            "mean_predicted": 0.2517,
+            "observed_rate": 0.2807,
+            "count": 228
+          },
+          {
+            "bin_center": 0.35,
+            "mean_predicted": 0.347,
+            "observed_rate": 0.3582,
+            "count": 201
+          },
+          {
+            "bin_center": 0.45,
+            "mean_predicted": 0.4472,
+            "observed_rate": 0.4426,
+            "count": 183
+          },
+          {
+            "bin_center": 0.55,
+            "mean_predicted": 0.5483,
+            "observed_rate": 0.5316,
+            "count": 158
+          },
+          {
+            "bin_center": 0.65,
+            "mean_predicted": 0.6494,
+            "observed_rate": 0.691,
+            "count": 178
+          },
+          {
+            "bin_center": 0.75,
+            "mean_predicted": 0.7512,
+            "observed_rate": 0.6968,
+            "count": 155
+          },
+          {
+            "bin_center": 0.85,
+            "mean_predicted": 0.8462,
+            "observed_rate": 0.8773,
+            "count": 163
+          },
+          {
+            "bin_center": 0.95,
+            "mean_predicted": 0.9477,
+            "observed_rate": 0.9216,
+            "count": 153
+          }
+        ]
+      },
+      "fit_seconds": 3.323,
+      "n_parameters": 35841
+    }
+  },
+  "attribution_agreement_spearman": 0.4451,
+  "profile": {
+    "n_rows": 2000,
+    "n_columns": 16,
+    "target_column": "target",
+    "task_type": "binary_classification",
+    "columns": [
+      {
+        "name": "record_id",
+        "dtype": "int64",
+        "role": "id_like",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x1",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x2",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x3",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x4",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x5",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x6",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x7_score",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "cat_a",
+        "dtype": "str",
+        "role": "categorical_feature",
+        "n_unique": 3,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "cat_b",
+        "dtype": "str",
+        "role": "categorical_feature",
+        "n_unique": 2,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x1_proxy",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "x8_noise",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "partial_feature",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 1304,
+        "missing_pct": 34.8
+      },
+      {
+        "name": "x9_noise",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "target",
+        "dtype": "int64",
+        "role": "target",
+        "n_unique": 2,
+        "missing_pct": 0.0
+      },
+      {
+        "name": "recent_readout",
+        "dtype": "float64",
+        "role": "numeric_feature",
+        "n_unique": 2000,
+        "missing_pct": 0.0
+      }
+    ],
+    "numeric_feature_columns": [
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7_score",
+      "x1_proxy",
+      "x8_noise",
+      "partial_feature",
+      "x9_noise",
+      "recent_readout"
+    ],
+    "categorical_feature_columns": [
+      "cat_a",
+      "cat_b"
+    ],
+    "id_like_columns": [
+      "record_id"
+    ],
+    "potential_target_leakage": [
+      {
+        "column": "recent_readout",
+        "reason": "|Pearson r| = 0.984 with target (> 0.95)",
+        "association": 0.9838
+      }
+    ],
+    "collinear_feature_clusters": [
+      [
+        "x1",
+        "x1_proxy"
+      ]
+    ],
+    "high_missing_columns": {
+      "partial_feature": 34.8
+    },
+    "class_balance": {
+      "0": 1117,
+      "1": 883
+    },
+    "target_summary": {},
+    "warnings": [
+      "Column 'partial_feature' is 34.8% missing (median/most-frequent imputed per fold).",
+      "ID-like column(s) detected and excluded from modeling: record_id",
+      "potential_target_leakage: 'recent_readout' |Pearson r| = 0.984 with target (> 0.95). Metrics will be optimistic unless this column is dropped.",
+      "collinear_feature_cluster: x1, x1_proxy (pairwise |r| > 0.9) \u2014 SHAP credit may split across these proxies."
+    ]
+  }
+}

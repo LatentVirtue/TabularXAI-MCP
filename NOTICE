@@ -1,0 +1,14 @@
+TabularXAI-MCP (tabular-xai-mcp)
+Copyright 2026 Aleksandar Jovanović
+
+This product includes software developed by Aleksandar Jovanović
+and licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The synthetic benchmark generator (tabular_xai.engine.synthetic) produces
+data whose structure is inspired by common Kaggle-style tabular
+competitions: nonlinear feature interactions, a redundant collinear
+proxy feature, and a subtly leaky post-outcome sensor feature.
+
+This product depends on third-party open-source libraries (LightGBM,
+PyTorch, scikit-learn, SHAP, pandas, Plotly, FastMCP among others),
+each under its own license.

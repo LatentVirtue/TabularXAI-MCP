@@ -1,0 +1,400 @@
+{
+  "schema_version": "1.0",
+  "run_id": "demo_run",
+  "created_at": "2026-11-20T21:05:00+00:00",
+  "task_type": "binary_classification",
+  "dataset": {
+    "path": "C:\\Users\\Alex\\Documents\\HermesWorkDir\\TabularXAI-MCP\\examples\\demo_run\\synthetic_dataset.csv",
+    "n_rows": 2000,
+    "target_column": "target",
+    "task_type": "binary_classification",
+    "n_features": 13,
+    "feature_columns": [
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7_score",
+      "x1_proxy",
+      "x8_noise",
+      "partial_feature",
+      "x9_noise",
+      "cat_a",
+      "cat_b"
+    ],
+    "dropped_columns": [
+      "recent_readout",
+      "record_id"
+    ],
+    "notes": [
+      "Auto-dropped ID-like columns: record_id",
+      "Auto-dropped leaky columns (guard fired): recent_readout"
+    ]
+  },
+  "dataset_warnings": [
+    "potential_target_leakage: recent_readout (|Pearson r| = 0.984 with target (> 0.95))",
+    "collinear_feature_cluster: x1, x1_proxy",
+    "Auto-dropped ID-like columns: record_id",
+    "Auto-dropped leaky columns (guard fired): recent_readout"
+  ],
+  "model_comparison": {
+    "lightgbm": {
+      "per_fold": {
+        "roc_auc": [
+          0.774198,
+          0.774249,
+          0.804008,
+          0.821768,
+          0.796534
+        ],
+        "pr_auc": [
+          0.718995,
+          0.747928,
+          0.762422,
+          0.805529,
+          0.757362
+        ],
+        "f1": [
+          0.664706,
+          0.660661,
+          0.676218,
+          0.703704,
+          0.689655
+        ],
+        "brier": [
+          0.219911,
+          0.219153,
+          0.202669,
+          0.176549,
+          0.209706
+        ],
+        "accuracy": [
+          0.715,
+          0.7175,
+          0.7175,
+          0.76,
+          0.73
+        ]
+      },
+      "mean": {
+        "roc_auc": 0.794152,
+        "pr_auc": 0.758447,
+        "f1": 0.678989,
+        "brier": 0.205598,
+        "accuracy": 0.728
+      },
+      "std": {
+        "roc_auc": 0.018219,
+        "pr_auc": 0.027932,
+        "f1": 0.015951,
+        "brier": 0.015861,
+        "accuracy": 0.016837
+      },
+      "oof": {
+        "roc_auc": 0.793229,
+        "pr_auc": 0.75558,
+        "f1": 0.678867,
+        "brier": 0.205598,
+        "accuracy": 0.728
+      },
+      "calibration": {
+        "ece": 0.13383,
+        "ece_n_bins": 10,
+        "brier": 0.205597525807261,
+        "reliability_curve": [
+          {
+            "bin_center": 0.05,
+            "mean_predicted": 0.03,
+            "observed_rate": 0.1782,
+            "count": 679
+          },
+          {
+            "bin_center": 0.15,
+            "mean_predicted": 0.1442,
+            "observed_rate": 0.3173,
+            "count": 208
+          },
+          {
+            "bin_center": 0.25,
+            "mean_predicted": 0.2494,
+            "observed_rate": 0.3962,
+            "count": 106
+          },
+          {
+            "bin_center": 0.35,
+            "mean_predicted": 0.3525,
+            "observed_rate": 0.3673,
+            "count": 98
+          },
+          {
+            "bin_center": 0.45,
+            "mean_predicted": 0.4477,
+            "observed_rate": 0.4388,
+            "count": 98
+          },
+          {
+            "bin_center": 0.55,
+            "mean_predicted": 0.5548,
+            "observed_rate": 0.5102,
+            "count": 98
+          },
+          {
+            "bin_center": 0.65,
+            "mean_predicted": 0.6477,
+            "observed_rate": 0.6389,
+            "count": 72
+          },
+          {
+            "bin_center": 0.75,
+            "mean_predicted": 0.7514,
+            "observed_rate": 0.55,
+            "count": 80
+          },
+          {
+            "bin_center": 0.85,
+            "mean_predicted": 0.8535,
+            "observed_rate": 0.6713,
+            "count": 143
+          },
+          {
+            "bin_center": 0.95,
+            "mean_predicted": 0.9687,
+            "observed_rate": 0.811,
+            "count": 418
+          }
+        ]
+      },
+      "fit_seconds": 3.408,
+      "n_parameters": null
+    },
+    "pytorch_mlp": {
+      "per_fold": {
+        "roc_auc": [
+          0.814352,
+          0.820566,
+          0.819209,
+          0.862659,
+          0.825441
+        ],
+        "pr_auc": [
+          0.789859,
+          0.780693,
+          0.783069,
+          0.837428,
+          0.809363
+        ],
+        "f1": [
+          0.664577,
+          0.699422,
+          0.731302,
+          0.733728,
+          0.711656
+        ],
+        "brier": [
+          0.175623,
+          0.170896,
+          0.17199,
+          0.150546,
+          0.167112
+        ],
+        "accuracy": [
+          0.7325,
+          0.74,
+          0.7575,
+          0.775,
+          0.765
+        ]
+      },
+      "mean": {
+        "roc_auc": 0.828445,
+        "pr_auc": 0.800083,
+        "f1": 0.708137,
+        "brier": 0.167233,
+        "accuracy": 0.754
+      },
+      "std": {
+        "roc_auc": 0.017468,
+        "pr_auc": 0.021217,
+        "f1": 0.025208,
+        "brier": 0.008774,
+        "accuracy": 0.0157
+      },
+      "oof": {
+        "roc_auc": 0.82755,
+        "pr_auc": 0.797038,
+        "f1": 0.708876,
+        "brier": 0.167233,
+        "accuracy": 0.754
+      },
+      "calibration": {
+        "ece": 0.02243,
+        "ece_n_bins": 10,
+        "brier": 0.16723333358323977,
+        "reliability_curve": [
+          {
+            "bin_center": 0.05,
+            "mean_predicted": 0.0591,
+            "observed_rate": 0.0836,
+            "count": 287
+          },
+          {
+            "bin_center": 0.15,
+            "mean_predicted": 0.1443,
+            "observed_rate": 0.1463,
+            "count": 294
+          },
+          {
+            "bin_center": 0.25,
+            "mean_predicted": 0.2517,
+            "observed_rate": 0.2807,
+            "count": 228
+          },
+          {
+            "bin_center": 0.35,
+            "mean_predicted": 0.347,
+            "observed_rate": 0.3582,
+            "count": 201
+          },
+          {
+            "bin_center": 0.45,
+            "mean_predicted": 0.4472,
+            "observed_rate": 0.4426,
+            "count": 183
+          },
+          {
+            "bin_center": 0.55,
+            "mean_predicted": 0.5483,
+            "observed_rate": 0.5316,
+            "count": 158
+          },
+          {
+            "bin_center": 0.65,
+            "mean_predicted": 0.6494,
+            "observed_rate": 0.691,
+            "count": 178
+          },
+          {
+            "bin_center": 0.75,
+            "mean_predicted": 0.7512,
+            "observed_rate": 0.6968,
+            "count": 155
+          },
+          {
+            "bin_center": 0.85,
+            "mean_predicted": 0.8462,
+            "observed_rate": 0.8773,
+            "count": 163
+          },
+          {
+            "bin_center": 0.95,
+            "mean_predicted": 0.9477,
+            "observed_rate": 0.9216,
+            "count": 153
+          }
+        ]
+      },
+      "fit_seconds": 3.323,
+      "n_parameters": 35841
+    }
+  },
+  "winner": "pytorch_mlp",
+  "winning_metric": "roc_auc",
+  "winner_rationale": "'pytorch_mlp' won on pooled OOF roc_auc: 0.8276 vs 0.7932 for 'lightgbm'.",
+  "calibration_summary": {
+    "ece": 0.02243,
+    "ece_n_bins": 10,
+    "brier": 0.16723333358323977
+  },
+  "attribution_agreement_spearman": 0.4451,
+  "top_features": [
+    {
+      "feature": "x3",
+      "gbdt_gain_importance": 3226.120289,
+      "gbdt_mean_abs_shap": 1.191675,
+      "nn_mean_abs_shap": 0.718791
+    },
+    {
+      "feature": "x5",
+      "gbdt_gain_importance": 2427.968573,
+      "gbdt_mean_abs_shap": 0.91295,
+      "nn_mean_abs_shap": 0.615863
+    },
+    {
+      "feature": "cat_a",
+      "gbdt_gain_importance": 946.966248,
+      "gbdt_mean_abs_shap": 0.906378,
+      "nn_mean_abs_shap": 0.698029
+    },
+    {
+      "feature": "x4",
+      "gbdt_gain_importance": 2339.077063,
+      "gbdt_mean_abs_shap": 0.878316,
+      "nn_mean_abs_shap": 0.601912
+    },
+    {
+      "feature": "x1",
+      "gbdt_gain_importance": 2210.863192,
+      "gbdt_mean_abs_shap": 0.873685,
+      "nn_mean_abs_shap": 0.512312
+    },
+    {
+      "feature": "x7_score",
+      "gbdt_gain_importance": 1616.008306,
+      "gbdt_mean_abs_shap": 0.582361,
+      "nn_mean_abs_shap": 0.276362
+    },
+    {
+      "feature": "x1_proxy",
+      "gbdt_gain_importance": 1727.941761,
+      "gbdt_mean_abs_shap": 0.491305,
+      "nn_mean_abs_shap": 0.224328
+    },
+    {
+      "feature": "x2",
+      "gbdt_gain_importance": 1925.293096,
+      "gbdt_mean_abs_shap": 0.344827,
+      "nn_mean_abs_shap": 0.230907
+    },
+    {
+      "feature": "cat_b",
+      "gbdt_gain_importance": 322.618754,
+      "gbdt_mean_abs_shap": 0.310359,
+      "nn_mean_abs_shap": 0.300258
+    },
+    {
+      "feature": "x8_noise",
+      "gbdt_gain_importance": 1423.545324,
+      "gbdt_mean_abs_shap": 0.268692,
+      "nn_mean_abs_shap": 0.085803
+    }
+  ],
+  "worst_error_indices": {
+    "worst_false_positives": [
+      644,
+      205,
+      1411,
+      1766,
+      650
+    ],
+    "worst_false_negatives": [
+      152,
+      530,
+      219,
+      224,
+      888
+    ]
+  },
+  "artifact_paths": {
+    "manifest_json": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/manifest.json",
+    "report_html": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/report.html",
+    "oof_predictions": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/oof_predictions.parquet",
+    "shap_gbdt": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/shap_values_gbdt.parquet",
+    "shap_nn": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/shap_values_nn.parquet",
+    "metrics_json": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/metrics.json",
+    "models_dir": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/models",
+    "dataset_copy": "C:/Users/Alex/Documents/HermesWorkDir/TabularXAI-MCP/examples/demo_run/dataset_source.csv"
+  },
+  "estimated_manifest_tokens": 1563
+}

@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local benchmark runs (a curated sample lives in examples/)
+runs/
